@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================== -->
+<!-- SEO: заголовок и описание                       -->
+<!-- Меняй текст здесь, если меняется позиционирование -->
+<!-- ============================================== -->
+<title>Алексей Криничный — ИИ-системы, которые понимают людей</title>
+<meta name="description" content="OSINT, профайлинг, разработка ИИ-агентов. Помогаю бизнесу понимать людей и данные. Бесплатная консультация.">
+<meta name="author" content="Алексей Криничный">
+<meta name="keywords" content="OSINT, профайлинг, промпт-инжиниринг, ИИ-агенты, Алексей Криничный, 7 радикалов, NLP">
+
+<!-- ============================================== -->
+<!-- Open Graph: превью при шеринге в Telegram, VK   -->
+<!-- ============================================== -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Алексей Криничный — ИИ-системы, которые понимают людей">
+<meta property="og:description" content="OSINT, профайлинг, разработка ИИ-агентов. Помогаю бизнесу понимать людей и данные. Бесплатная консультация.">
+<meta property="og:image" content="images/logo.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://alexkrinclub.ru">
+
+<!-- ============================================== -->
+<!-- Twitter Card: превью в X / Twitter              -->
+<!-- ============================================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Алексей Криничный — ИИ-системы, которые понимают людей">
+<meta name="twitter:description" content="OSINT, профайлинг, разработка ИИ-агентов. Бесплатная консультация.">
+<meta name="twitter:image" content="images/logo.jpg">
+
+<!-- ============================================== -->
+<!-- Schema.org: микроразметка для поисковиков        -->
+<!-- ============================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Алексей Криничный",
+  "jobTitle": "ИИ-архитектор, OSINT-аналитик, профайлер",
+  "description": "Строю ИИ-системы, которые понимают людей. OSINT, профайлинг, промпт-инжиниринг, разработка ИИ-агентов.",
+  "url": "https://alexkrinclub.ru",
+  "image": "images/logo.jpg",
+  "email": "mailto:i@alexkrinclub.ru",
+  "sameAs": [
+    "https://t.me/alexkrinclub",
+    "https://linkedin.com/in/alexkrinnlp"
+  ],
+  "knowsAbout": ["OSINT", "Профайлинг", "Промпт-инжиниринг", "ИИ-агенты", "НЛП", "7 радикалов"],
+  "alumniOf": "МГУ им. М.В. Ломоносова"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ИИ-системы, которые понимают людей",
+  "provider": {
+    "@type": "Person",
+    "name": "Алексей Криничный"
+  },
+  "areaServed": "RU",
+  "description": "OSINT-аналитика, профайлинг, разработка ИИ-агентов и промпт-инжиниринг для бизнеса.",
+  "offers": {
+    "@type": "Offer",
+    "name": "Бесплатная 30-минутная консультация",
+    "price": "0",
+    "priceCurrency": "RUB"
+  }
+}
+</script>
+
+<!-- ============================================== -->
+<!-- Шрифты: Manrope (заголовки) + Inter (текст)      -->
+<!-- Предзагрузка для быстрого рендера                -->
+<!-- ============================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+
+<style>
+/* ============================================== */
+/* ЦВЕТОВАЯ ПАЛИТРА                                */
+/* Меняй значения здесь — весь дизайн подтянется    */
+/* ============================================== */
+:root{
+  --bg:        #0f1419;   /* основной фон — глубокий графит */
+  --bg-alt:    #161b22;   /* фон секций (чуть светлее) */
+  --bg-card:   #1c2330;   /* карточки */
+  --text:      #e6edf3;   /* основной текст */
+  --muted:     #8b949e;   /* приглушённый текст */
+  --accent:    #c9a96e;   /* золото / медь — главный акцент */
+  --accent-lt: #d4b88a;   /* светлее для hover */
+  --red:       #c5392f;   /* красный с логотипа — мелкие акценты */
+  --border:    #2d333b;   /* границы */
+  --radius:    14px;      /* скругление карточек */
+  --max-w:     1140px;    /* макс. ширина контента */
+}
+
+/* ============================================== */
+/* СБРОС И БАЗА                                    */
+/* ============================================== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Заголовки — Manrope, крупнее, с характером */
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;line-height:1.25}
+
+/* ============================================== */
+/* НАВИГАЦИЯ — фиксированные точки справа           */
+/* ============================================== */
+.nav{
+  position:fixed;top:50%;right:24px;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:14px;z-index:100;
+}
+.nav a{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--border);transition:all .3s ease;
+  border:2px solid transparent;
+}
+.nav a:hover,.nav a.active{
+  background:var(--accent);border-color:var(--accent);
+  transform:scale(1.3);
+}
+
+/* ============================================== */
+/* ОБЩИЕ КЛАССЫ                                    */
+/* ============================================== */
+.screen{
+  min-height:100vh;display:flex;align-items:center;
+  padding:80px 24px;position:relative;
+}
+.screen:nth-child(even){background:var(--bg-alt)}
+.wrap{max-width:var(--max-w);margin:0 auto;width:100%}
+
+/* Кнопки */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#0f1419;
+  padding:15px 32px;border-radius:10px;
+  text-decoration:none;font-weight:600;font-size:1rem;
+  border:none;cursor:pointer;font-family:inherit;
+  transition:all .25s ease;letter-spacing:.3px;
+}
+.btn:hover{background:var(--accent-lt);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,169,110,.25)}
+.btn:active{transform:translateY(0)}
+.btn.outline{
+  background:transparent;color:var(--accent);
+  border:1.5px solid var(--accent);
+}
+.btn.outline:hover{background:rgba(201,169,110,.08);box-shadow:none}
+
+/* Цитата */
+.quote{
+  border-left:3px solid var(--accent);
+  padding:20px 24px;margin:36px 0;
+  background:var(--bg-card);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:1.1rem;font-weight:500;color:var(--text);
+  font-family:'Manrope',sans-serif;
+}
+
+/* Тег / подзаголовок секции */
+.tag{
+  color:var(--accent);font-size:.85rem;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;
+}
+
+/* ============================================== */
+/* ЭКРАН 1: ЗНАКОМСТВО                              */
+/* Слева — текст, справа — портретное фото          */
+/* ============================================== */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero-content h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:16px;letter-spacing:-.5px}
+.hero-slogan{
+  font-size:clamp(1.2rem,3vw,1.6rem);color:var(--accent);
+  font-weight:600;margin-bottom:18px;font-family:'Manrope',sans-serif;
+}
+.hero-subtitle{color:var(--muted);font-size:1.05rem;margin-bottom:36px;letter-spacing:.5px}
+.hero-photo{position:relative;align-self:center}
+.hero-photo img{
+  display:block;width:100%;height:auto;max-height:560px;
+  object-fit:cover;object-position:center top;
+  border-radius:var(--radius);
+  /* Лёгкий тёплый тон + мягкое затемнение */
+  filter:grayscale(.15) sepia(.08) brightness(.92) contrast(1.05);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+/* Декоративная рамка-акцент вокруг фото */
+.hero-photo::before{
+  content:'';position:absolute;top:-12px;left:-12px;right:12px;bottom:12px;
+  border:2px solid var(--accent);border-radius:var(--radius);
+  z-index:-1;opacity:.3;
+}
+
+/* ============================================== */
+/* ЭКРАН 2: ЗНАКОМНО? — три карточки-боли            */
+/* ============================================== */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:12px}
+.pain-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:32px 28px;
+  transition:all .3s ease;
+}
+.pain-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.pain-icon{
+  width:48px;height:48px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(201,169,110,.1);border-radius:12px;
+}
+.pain-icon svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8}
+.pain-card h3{font-size:1.15rem;margin-bottom:10px;font-weight:700}
+.pain-card p{color:var(--muted);font-size:.95rem}
+
+/* ============================================== */
+/* ЭКРАН 3: ПОЧЕМУ Я — фото + три опоры 01/02/03    */
+/* ============================================== */
+.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.why-photo{position:relative;order:-1;align-self:center}
+.why-photo img{
+  display:block;width:100%;height:auto;max-height:560px;
+  object-fit:cover;object-position:center;
+  border-radius:var(--radius);
+  filter:grayscale(.2) sepia(.06) brightness(.9) contrast(1.05);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.why-photo::after{
+  content:'';position:absolute;bottom:-12px;right:-12px;
+  width:80px;height:80px;border:2px solid var(--accent);
+  border-radius:var(--radius);opacity:.25;
+}
+.pillars{display:flex;flex-direction:column;gap:28px}
+.pillar{display:flex;gap:20px;align-items:flex-start}
+.pillar-num{
+  font-family:'Manrope',sans-serif;font-size:1.8rem;font-weight:800;
+  color:var(--accent);min-width:48px;line-height:1;
+  padding-top:2px;
+}
+.pillar-content h3{font-size:1.2rem;margin-bottom:6px;font-weight:700}
+.pillar-content p{color:var(--muted);font-size:.95rem}
+
+/* ============================================== */
+/* ЭКРАН 4: КОНСУЛЬТАЦИЯ — форма                    */
+/* ============================================== */
+.consult-intro{max-width:560px;margin-bottom:36px}
+.consult-intro p{color:var(--muted);margin-top:12px}
+.checklist{list-style:none;margin:24px 0 0}
+.checklist li{
+  padding-left:30px;position:relative;margin-bottom:12px;
+  color:var(--muted);font-size:.95rem;
+}
+.checklist li::before{
+  content:'';position:absolute;left:0;top:2px;
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(201,169,110,.12);
+  border:1.5px solid var(--accent);
+}
+.checklist li::after{
+  content:'✓';position:absolute;left:5px;top:3px;
+  color:var(--accent);font-size:.75rem;font-weight:700;
+}
+
+/* Форма */
+.form-wrap{max-width:520px;margin-top:36px}
+form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{position:relative}
+.field label{
+  display:block;font-size:.85rem;color:var(--muted);
+  margin-bottom:6px;font-weight:500;
+}
+.field input,.field textarea{
+  width:100%;background:var(--bg-card);
+  border:1.5px solid var(--border);color:var(--text);
+  padding:14px 16px;border-radius:10px;
+  font-size:1rem;font-family:inherit;transition:border-color .25s;
+}
+.field input::placeholder,.field textarea::placeholder{color:#5c6573}
+.field input:focus,.field textarea:focus{
+  outline:none;border-color:var(--accent);
+}
+.field input:invalid:not(:placeholder-shown),.field textarea:invalid:not(:placeholder-shown){
+  border-color:var(--red);
+}
+.field textarea{resize:vertical;min-height:100px}
+.form-msg{
+  display:none;padding:14px 18px;border-radius:10px;
+  font-size:.95rem;margin-top:8px;
+}
+.form-msg.success{display:block;background:rgba(126,231,135,.1);border:1px solid #7ee787;color:#7ee787}
+.form-msg.error{display:block;background:rgba(197,57,47,.1);border:1px solid var(--red);color:var(--red)}
+
+/* ============================================== */
+/* ЭКРАН 5: КОНТАКТЫ — логотип + связи              */
+/* ============================================== */
+.contacts-screen{text-align:center}
+.contacts-logo{
+  width:120px;height:120px;margin:0 auto 28px;
+  border-radius:50%;overflow:hidden;
+  box-shadow:0 8px 32px rgba(197,57,47,.2);
+}
+.contacts-logo img{display:block;width:100%;height:100%;object-fit:cover}
+.contacts-screen h2{margin-bottom:8px}
+.contacts-role{color:var(--accent);font-weight:600;margin-bottom:32px;font-family:'Manrope',sans-serif}
+.contacts-list{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:16px 32px;
+  margin-bottom:36px;
+}
+.contacts-list a{
+  color:var(--text);text-decoration:none;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 20px;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:10px;
+  transition:all .25s;font-size:.95rem;
+}
+.contacts-list a:hover{border-color:var(--accent);color:var(--accent)}
+.contacts-list svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;flex-shrink:0}
+.footer-copy{
+  margin-top:48px;color:#5c6573;font-size:.85rem;
+  border-top:1px solid var(--border);padding-top:24px;
+}
+
+/* ============================================== */
+/* АНИМАЦИИ — появление при скролле                */
+/* Класс .reveal добавляется JS, начальное состояние: */
+/* ============================================== */
+.reveal{
+  opacity:0;transform:translateY(30px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ============================================== */
+/* АДАПТИВ: планшет                                */
+/* ============================================== */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:40px}
+  .hero-photo{max-width:400px;margin:0 auto}
+  .why-grid{grid-template-columns:1fr;gap:40px}
+  .why-photo{max-width:400px;margin:0 auto}
+  .pain-grid{grid-template-columns:1fr;gap:20px}
+  .nav{display:none}
+}
+
+/* ============================================== */
+/* АДАПТИВ: телефон                                */
+/* ============================================== */
+@media(max-width:600px){
+  .screen{padding:60px 20px}
+  .hero-content h1{font-size:1.8rem}
+  .hero-slogan{font-size:1.15rem}
+  .form-row{grid-template-columns:1fr}
+  .pillar{gap:14px}
+  .pillar-num{font-size:1.4rem;min-width:36px}
+  .contacts-list{flex-direction:column;align-items:center}
+  .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================== -->
+<!-- НАВИГАЦИЯ — 5 точек для быстрого перехода        -->
+<!-- ============================================== -->
+<nav class="nav" aria-label="Навигация по разделам">
+  <a href="#s1" title="Знакомство"></a>
+  <a href="#s2" title="Знакомо?"></a>
+  <a href="#s3" title="Почему я"></a>
+  <a href="#s4" title="Консультация"></a>
+  <a href="#s5" title="Контакты"></a>
+</nav>
+
+<!-- ============================================== -->
+<!-- ЭКРАН 1: ЗНАКОМСТВО                             -->
+<!-- Слева — имя, слоган, подзаголовок, кнопка       -->
+<!-- Справа — портретное фото                        -->
+<!-- ============================================== -->
+<section class="screen" id="s1">
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-content reveal">
+        <h1>Алексей Криничный</h1>
+        <p class="hero-slogan">Строю ИИ-системы, которые понимают людей</p>
+        <p class="hero-subtitle">OSINT · Профайлинг · Промпт-инжиниринг · Разработка ИИ-агентов</p>
+        <a href="#s2" class="btn">Познакомиться</a>
+      </div>
+      <div class="hero-photo reveal">
+        <!-- Портретное фото. Замени файл images/portrait.jpg, если нужно -->
+        <img src="images/portrait.jpg" alt="Алексей Криничный — портрет" loading="lazy" width="1400" height="2100">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- ЭКРАН 2: ЗНАКОМНО? — три живые сцены-боли        -->
+<!-- ============================================== -->
+<section class="screen" id="s2">
+  <div class="wrap">
+    <p class="tag reveal">О вас</p>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:36px">Знакомо?</h2>
+
+    <div class="pain-grid">
+      <!-- Сцена 1: найм -->
+      <div class="pain-card reveal">
+        <div class="pain-icon">
+          <!-- Иконка: человек под лупой -->
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6" opacity=".4"/></svg>
+        </div>
+        <h3>Вы нанимаете человека на ключевую роль</h3>
+        <p>Резюме блестящее, рекомендации звенят золотом, на собеседовании — обаяние и точные ответы. А через два месяца понимаете: перед вами был кто-то другой. Роль занята, а задачи — нет.</p>
+      </div>
+
+      <!-- Сцена 2: переговоры -->
+      <div class="pain-card reveal">
+        <div class="pain-icon">
+          <!-- Иконка: диалог -->
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
+        </div>
+        <h3>На переговорах партнёр улыбается и кивает</h3>
+        <p>Говорит «давайте обсудим», «я подумаю», «всё интересно». А по паузам, цифрам и тому, чего он не говорит, уже видно: решение принято, и не в вашу пользу. Вы тратите недели на разговор, который ничего не решает.</p>
+      </div>
+
+      <!-- Сцена 3: поиск себя -->
+      <div class="pain-card reveal">
+        <div class="pain-icon">
+          <!-- Иконка: поиск в сети -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </div>
+        <h3>Гуглите себя перед важной встречей</h3>
+        <p>И находите не себя — а однофамильца с судимостью, или пустоту, которая говорит громче любого резюме. А ваш контрагент тем временем гуглит то же самое и делает выводы без вас.</p>
+      </div>
+    </div>
+
+    <div class="quote reveal">
+      Если хотя бы одна из этих сцен вам знакома — нам стоит поговорить. Я знаю, как это чинится.
+    </div>
+
+    <a href="#s3" class="btn reveal" style="margin-top:8px">Да, это про меня</a>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- ЭКРАН 3: ПОЧЕМУ Я — фото + три опоры 01/02/03   -->
+<!-- ============================================== -->
+<section class="screen" id="s3">
+  <div class="wrap">
+    <div class="why-grid">
+      <!-- Деловое фото слева -->
+      <div class="why-photo reveal">
+        <!-- Деловое фото. Замени файл images/business.jpg, если нужно -->
+        <img src="images/business.jpg" alt="Алексей Криничный — деловой портрет" loading="lazy" width="1400" height="934">
+      </div>
+
+      <!-- Три опоры справа -->
+      <div class="pillars">
+        <p class="tag reveal">Почему я</p>
+        <h2 class="reveal" style="font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:28px">Три опоры, на которых всё держится</h2>
+
+        <div class="pillar reveal">
+          <div class="pillar-num">01</div>
+          <div class="pillar-content">
+            <h3>Понимаю людей</h3>
+            <p>Психология, НЛП, профайлинг, методика «7 радикалов». Я слышу не то, что человек произносит, а то, что он на самом деле говорит — между строк, в паузах, в выборе слов и в том, чего он избегает.</p>
+          </div>
+        </div>
+
+        <div class="pillar reveal">
+          <div class="pillar-num">02</div>
+          <div class="pillar-content">
+            <h3>Вижу то, что скрыто</h3>
+            <p>OSINT и работа с цифровыми следами. То, что стёрли, забыли или думали, что никто не увидит, — всё оставляет след. Я знаю, где искать и как сложить картину из того, что другие принимают за шум.</p>
+          </div>
+        </div>
+
+        <div class="pillar reveal">
+          <div class="pillar-num">03</div>
+          <div class="pillar-content">
+            <h3>Учу ИИ делать то же самое</h3>
+            <p>Разрабатываю ИИ-агентов и промпты, которые читают людей и контекст так, как делал бы живой аналитик — только быстрее, без усталости и без плохих дней. Один из таких агентов — ИИ-консультант по «7 радикалам» на Flask + YandexGPT, уже работает.</p>
+          </div>
+        </div>
+
+        <div class="quote reveal" style="margin-top:8px">
+          16 лет в бизнесе и 127 проектов — это понимание, зачем всё это нужно. Не теория, а инструмент, который доводит до результата.
+        </div>
+
+        <a href="#s4" class="btn reveal" style="margin-top:8px;align-self:flex-start">Хочу узнать подробнее</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- ЭКРАН 4: КОНСУЛЬТАЦИЯ — форма заявки            -->
+<!-- ============================================== -->
+<section class="screen" id="s4">
+  <div class="wrap">
+    <div class="consult-intro reveal">
+      <p class="tag">Консультация</p>
+      <h2 style="font-size:clamp(1.6rem,4vw,2.4rem)">Давайте разберём вашу ситуацию</h2>
+      <p>Бесплатная консультация — 30 минут, без скриптов и продаж. Вы рассказываете, что у вас за задача. Я задаю вопросы, разбираю и говорю прямо: что здесь можно сделать, что — нет, и с чего стоит начать.</p>
+    </div>
+
+    <ul class="checklist reveal">
+      <li>честную оценку вашей ситуации</li>
+      <li>разбор, где слабое звено — человек, данные или процесс</li>
+      <li>конкретный план следующих шагов</li>
+    </ul>
+
+    <!-- ============================================== -->
+    <!-- ФОРМА ЗАЯВКИ                                    -->
+    <!-- Отправка через Formspree.                       -->
+    <!-- URL: https://formspree.io/f/mbgldjvj           -->
+    <!-- ============================================== -->
+    <div class="form-wrap reveal">
+      <form id="consultForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input type="text" id="f-name" name="name" placeholder="Как к вам обращаться" required minlength="2">
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="f-task">Коротко о задаче</label>
+          <textarea id="f-task" name="task" placeholder="Опишите ситуацию в двух-трёх предложениях"></textarea>
+        </div>
+        <button type="submit" class="btn">Записаться на консультацию</button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- ЭКРАН 5: КОНТАКТЫ — логотип + связи              -->
+<!-- ============================================== -->
+<section class="screen contacts-screen" id="s5">
+  <div class="wrap reveal">
+    <!-- Логотип. Замени файл images/logo.jpg, если нужно -->
+    <div class="contacts-logo">
+      <img src="images/logo.jpg" alt="Логотип: Алексей Криничный · AI Agents · Profiling" width="120" height="120">
+    </div>
+    <h2 style="font-size:clamp(1.6rem,4vw,2.2rem)">Алексей Криничный</h2>
+    <p class="contacts-role">ИИ-системы, которые понимают людей</p>
+
+    <div class="contacts-list">
+      <!-- Telegram -->
+      <a href="https://t.me/alexkrinclub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M21.5 4.5L2.5 12l6 2 2 6 3-4 5 4z"/></svg>
+        Telegram
+      </a>
+      <!-- WhatsApp: замени номер ниже на свой (формат: 7XXXXXXXXXX) -->
+      <a href="https://wa.me/7XXXXXXXXXX" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+        WhatsApp
+      </a>
+      <!-- MAX: замени ВАШ_НИК на свой ник в мессенджере MAX -->
+      <a href="https://max.ru/ВАШ_НИК" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="10" r="0.5" fill="currentColor"/><circle cx="15" cy="10" r="0.5" fill="currentColor"/></svg>
+        MAX
+      </a>
+      <a href="mailto:i@alexkrinclub.ru">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        i@alexkrinclub.ru
+      </a>
+      <a href="https://linkedin.com/in/alexkrinnlp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <a href="https://t.me/alexkrinclub" target="_blank" rel="noopener" class="btn">Написать в Telegram</a>
+
+    <p class="footer-copy">© 2026 Алексей Криничный. OSINT · Профайлинг · ИИ-агенты.</p>
+  </div>
+</section>
+
+<!-- ============================================== -->
+<!-- JAVASCRIPT: анимации + форма                    -->
+<!-- ============================================== -->
+<script>
+/* --- Появление секций при скролле (Intersection Observer) --- */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); /* анимируем один раз */
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* --- Подсветка активной точки в навигации --- */
+const navLinks = document.querySelectorAll('.nav a');
+const sections = document.querySelectorAll('.screen');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.5 });
+sections.forEach(s => navObserver.observe(s));
+
+/* --- Валидация и отправка формы --- */
+const form = document.getElementById('consultForm');
+const msg = document.getElementById('formMsg');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  msg.className = 'form-msg';
+  msg.textContent = '';
+
+  /* Простая валидация */
+  const name = form.name.value.trim();
+  const phone = form.phone.value.trim();
+  const email = form.email.value.trim();
+
+  if (name.length < 2) {
+    msg.classList.add('error');
+    msg.textContent = 'Пожалуйста, укажите имя.';
+    return;
+  }
+  if (phone.length < 6) {
+    msg.classList.add('error');
+    msg.textContent = 'Пожалуйста, укажите телефон.';
+    return;
+  }
+  if (!email.includes('@') || !email.includes('.')) {
+    msg.classList.add('error');
+    msg.textContent = 'Пожалуйста, проверьте email.';
+    return;
+  }
+
+  /* ========================================================== */
+  /* ОТПРАВКА ЗАЯВКИ ЧЕРЕЗ FORMSPREE                              */
+  /*                                                            */
+  /* Formspree принимает данные формы и присылает их на email,   */
+  /* привязанный к аккаунту. Бесплатно: 50 заявок/мес.           */
+  /* URL формы: https://formspree.io/f/mbgldjvj                 */
+  /* ========================================================== */
+
+  const FORMSPREE_URL = 'https://formspree.io/f/mbgldjvj';
+
+  fetch(FORMSPREE_URL, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+  })
+  .then(function(res) {
+    if (res.ok) {
+      msg.classList.add('success');
+      msg.textContent = 'Спасибо! Заявка отправлена — я свяжусь с вами в течение дня.';
+      form.reset();
+    } else {
+      msg.classList.add('error');
+      msg.textContent = 'Не удалось отправить. Напишите напрямую в Telegram: @alexkrinclub';
+    }
+  })
+  .catch(function() {
+    msg.classList.add('error');
+    msg.textContent = 'Не удалось отправить. Напишите напрямую в Telegram: @alexkrinclub';
+  });
+});
+</script>
+
+</body>
+</html>
